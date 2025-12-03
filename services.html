@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our HVAC Services</title>
+<link rel="stylesheet" href="css/global.css">
+
+<style>
+   .services-header {
+    text-align: center;
+    padding: 50px 20px 20px;
+}
+
+.services-header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.services-header p {
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+    margin: auto;
+}
+
+.services-grid {
+    width: 90%;
+    max-width: 1300px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.2s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.service-card a {
+    display: inline-block;
+    margin: 5px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #0077cc;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+
+    <!-- HEADER -->
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo-container">
+            <img src="images/company_mock_logo.jpg" alt="Company Logo" class="logo">
+            <h1>CoolTech HVAC Solutions</h1>
+        </div>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="#">Booking</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+</header>
+
+
+    <section class="services-header">
+        <h1>Our HVAC Services</h1>
+        <p>Professional, reliable, and affordable heating & cooling services to keep your home comfortable all year long.</p>
+    </section>
+
+    <section class="services-grid">
+
+
+<div class="service-card">
+    <img src="icons/ac-repair.png" alt="AC Repair" class="service-icon">
+    <h3>Air Conditioning Repair</h3>
+    <p>Fast, expert repairs to restore cool air and keep your system running efficiently.</p>
+    <a href="#">Learn More</a> • 
+    <a href="#">Request Quote</a>
+</div>
+
+
+<div class="service-card">
+    <img src="icons/furnace-install.png" alt="Furnace Installation" class="service-icon">
+    <h3>Furnace Installation</h3>
+    <p>Energy-efficient furnace replacements and new installations for dependable heat.</p>
+    <a href="#">Learn More</a> • 
+    <a href="#">Request Quote</a>
+</div>
+
+
+<div class="service-card">
+    <img src="icons/duct-cleaning.png" alt="Air Duct Cleaning" class="service-icon">
+    <h3>Air Duct Cleaning</h3>
+    <p>Improve air quality with a complete cleaning of dust, allergens, and debris.</p>
+    <a href="#">Learn More</a> • 
+    <a href="#">Request Quote</a>
+</div>
+
+
+<div class="service-card">
+    <img src="icons/maintenance.png" alt="Maintenance Plans" class="service-icon">
+    <h3>Maintenance Plans</h3>
+    <p>Keep your HVAC system running year-round with scheduled inspections and tune-ups.</p>
+    <a href="#">Learn More</a> • 
+    <a href="#">Request Quote</a>
+</div>
+
+
+<div class="service-card">
+    <img src="icons/hvac-replace.png" alt="HVAC Replacement" class="service-icon">
+    <h3>HVAC Replacement</h3>
+    <p>Full-system replacement options backed by proper sizing and expert installation.</p>
+    <a href="#">Learn More</a> • 
+    <a href="#">Request Quote</a>
+</div>
+
+
+<div class="service-card">
+    <img src="icons/thermostat.png" alt="Thermostat Installation" class="service-icon">
+    <h3>Thermostat Installation</h3>
+    <p>Smart and programmable thermostat setups to improve control and efficiency.</p>
+    <a href="#">Learn More</a> • 
+    <a href="#">Request Quote</a>
+</div>
+
+
+    </section>
+  
+
+<footer class="main-footer">
+    <p>CoolTech HVAC Solutions • Phone: (555) 555-5555 • Email: info@cooltech.com</p>
+    <p>© 2025 CoolTech HVAC Solutions • All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
+</body>
+</html>
