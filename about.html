@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About CoolTech HVAC Solutions</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/style.css"> 
+    <style>
+        .page-content {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        .page-content h1 {
+            color: #0077cc;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .mission-vision {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .mission-vision div {
+            flex: 1;
+            padding: 20px;
+            border-left: 3px solid #0077cc;
+            background: #fcfcfc;
+        }
+        .mission-vision h2 {
+            margin-top: 0;
+            color: #222;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid #ccc;
+        }
+        /* Responsive adjustments */
+        @media(max-width: 768px) {
+            .mission-vision {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="images/company_mock_logo.jpg" alt="Company Logo" class="logo">
+                <h1>CoolTech HVAC Solutions</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Booking</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-content">
+        <h1>Our Story: Keeping You Comfortable Since 2005</h1>
+
+        <div class="mission-vision">
+            <div>
+                <h2>Our Mission</h2>
+                <p>To deliver **reliable, high-quality HVAC services** with integrity, ensuring every customer enjoys optimal comfort and air quality in their home or business.</p>
+            </div>
+            <div>
+                <h2>Our Vision</h2>
+                <p>To be the most **trusted and preferred HVAC provider** in the region, recognized for our fast response, honest pricing, and commitment to energy efficiency.</p>
+            </div>
+        </div>
+
+        <h2>Meet Our Founding Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="images/placeholder_ceo.jpg" alt="CEO Photo" />
+                <h3>Alex Johnson</h3>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="images/placeholder_tech.jpg" alt="Lead Technician Photo" />
+                <h3>Maria Rodriguez</h3>
+                <p>Lead Service Technician</p>
+            </div>
+            <div class="team-member">
+                <img src="images/placeholder_admin.jpg" alt="Operations Manager Photo" />
+                <h3>David Lee</h3>
+                <p>Operations Manager</p>
+            </div>
+        </div>
+        
+        <p style="margin-top: 30px; text-align: center;"></p>
+    </div>
+
+    <footer class="main-footer">
+        <p>CoolTech HVAC Solutions • Phone: (555) 555-5555 • Email: info@cooltech.com</p>
+        <p>© 2025 CoolTech HVAC Solutions • All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
