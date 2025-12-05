@@ -5,20 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoolTech HVAC Solutions - Contact & Booking</title>
 
-    <!-- CONSOLIDATED INLINE STYLES (Matching fixed layout, colors, and header/footer) -->
+    <!-- CONSOLIDATED INLINE STYLES -->
     <style>
-        /* COLOR PALETTE: 
-            Primary Dark Blue: #0A2342 
-            Accent Bright Blue (Cool): #0077cc 
-            Accent Red (Heat/CTA): #D63030 
-        */
+       
         
-        /* --- GLOBAL BODY ADJUSTMENT FOR FIXED HEADER --- */
+        /* --- GLOBAL BODY --- */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8; /* Very light background */
+            background-color: #f8f8f8; 
             color: #333;
-            padding-top: 80px; /* Space for fixed header */
+            padding-top: 80px; 
             margin: 0;
         }
 
@@ -168,7 +164,7 @@
         }
 
         .submit-button {
-            /* Use red accent for CTA */
+    
             background-color: #D63030; 
             color: white;
             padding: 15px 30px;
@@ -180,13 +176,13 @@
         }
 
         .submit-button:hover {
-            background-color: #0A2342; /* Dark blue on hover */
+            background-color: #0A2342;
         }
         .submit-button:active {
             transform: scale(0.98);
         }
 
-        /* Responsive adjustments */
+       
         @media (max-width: 600px) {
             .booking-form {
                 grid-template-columns: 1fr; 
@@ -195,22 +191,22 @@
                 grid-column: 1 / -1; 
             }
             .main-nav {
-                display: none; /* Hide desktop navigation on mobile */
+                display: none; 
             }
         }
 
-        /* --- SUCCESS MESSAGE BOX STYLES (Creative) --- */
+        /* --- SUCCESS MESSAGE BOX STYLES --- */
         .success-message {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             padding: 30px;
-            background: linear-gradient(135deg, #0077cc, #0A2342); /* Blue Gradient */
+            background: linear-gradient(135deg, #0077cc, #0A2342); 
             color: white;
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            z-index: 2000; /* Higher than header */
+            z-index: 2000; 
             text-align: center;
             opacity: 0;
             visibility: hidden;
@@ -246,13 +242,13 @@
 
         /* --- FOOTER STYLES --- */
         .main-footer {
-            background-color: #0A2342; /* Dark Blue */
+            background-color: #0A2342; 
             color: white;
             text-align: center;
             padding: 25px 5%;
             font-size: 0.9em;
             line-height: 1.6;
-            margin-top: 40px; /* Add margin above footer */
+            margin-top: 40px; 
         }
         .main-footer p {
             margin: 5px 0;
@@ -261,7 +257,7 @@
 </head>
 <body>
 
-    <!-- HEADER (Fixed) - Consistent with other pages -->
+    <!-- HEADER -->
 <header class="main-header">
     <div class="header-container">
         <div class="logo-container">
@@ -275,7 +271,6 @@
             <a href="services.html">Services</a>
             <a href="about.html">About</a>
             <a href="blog.html">Blog</a>
-            <!-- Set 'Contact' as active -->
             <a href="contact.html" class="active">Contact</a>
         </nav>
     </div>
@@ -344,7 +339,7 @@
         </form>
     </div>
 
-    <!-- NEW SUCCESS MESSAGE BOX (Hidden by default) -->
+    <!-- NEW SUCCESS MESSAGE BOX -->
     <div id="success-message" class="success-message">
         <span class="icon">🚀</span>
         <h2>Request Sent!</h2>
@@ -352,7 +347,7 @@
     </div>
 
 
-    <!-- FOOTER - Consistent with other pages -->
+    <!-- FOOTER -->
     <footer class="main-footer">
         <p>CoolTech HVAC Solutions • Phone: (555) 555-5555 • Email: info@cooltech.com</p>
         <p>© 2025 CoolTech HVAC Solutions • All Rights Reserved</p>
@@ -364,7 +359,7 @@
         const messageBox = document.getElementById('success-message');
 
         form.addEventListener('submit', function(event) {
-            // 1. Prevent the default form submission (stops page reload)
+            // 1. Prevent the default form submission
             event.preventDefault();
 
             // Simple validation check 
@@ -378,22 +373,22 @@
             submitButton.disabled = true;
 
             setTimeout(() => {
-                // 2. Simulate success: Show the creative message box
+                //  Simulate success: Show the creative message box
                 messageBox.classList.add('show');
                 
-                // 3. Reset the form
+                //  Reset the form
                 form.reset();
 
-                // 4. Restore button state
+                //  Restore button state
                 submitButton.textContent = 'Submit Booking Request';
                 submitButton.disabled = false;
 
-                // 5. Hide the message box after 5 seconds
+                // Hide the message box after 5 seconds
                 setTimeout(() => {
                     messageBox.classList.remove('show');
                 }, 5000); 
 
-            }, 800); // 800ms delay to simulate network latency
+            }, 800); 
         });
     });
 </script>
