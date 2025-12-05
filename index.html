@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoolTech HVAC Solutions | Comfort, Style, and Reliability</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- INLINE STYLES WITH NEW BLUE/RED COLOR SCHEME AND REVAMPED LAYOUT -->
+    <style>
+        /* COLOR PALETTE: 
+            Primary Dark Blue: #0A2342 
+            Accent Bright Blue (Cool): #0077cc 
+            Accent Red (Heat/CTA): #D63030 
+        */
+
+        /* --- GLOBAL BODY ADJUSTMENT FOR FIXED HEADER --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Very light background */
+            color: #333;
+            padding-top: 80px; 
+            margin: 0; /* Ensure no body margin */
+        }
+
+        /* --- FIXED HEADER STYLES --- */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px; 
+            z-index: 1000; 
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            display: flex;
+            align-items: center; 
+        }
+        
+        .header-container {
+            width: 100%;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 15px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- LOGO AND TITLE ALIGNMENT (Top Bar) --- */
+        .logo-container {
+            display: flex;
+            align-items: center; 
+            gap: 12px;
+        }
+
+        .logo-container .logo {
+            height: 45px; 
+            width: auto;
+            border-radius: 8px; 
+        }
+
+        .logo-container h1 {
+            font-size: 1.6em; 
+            margin: 0; 
+            color: #0A2342;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation Links (Top Bar) */
+        .main-nav a {
+            color: #0A2342;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 12px; 
+            border-radius: 6px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .main-nav a:hover {
+            background-color: #0077cc;
+            color: white;
+        }
+        
+        /* Active Link Styling */
+        .main-nav a.active {
+            color: #0077cc;
+            border-bottom: 3px solid #0077cc;
+            background-color: transparent;
+        }
+        /* --- END HEADER STYLES --- */
+
+
+        /* --- HERO SECTION STYLES (Fixed CTA placement) --- */
+        .hero-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 80px 5%;
+            background-color: #f0f7ff; /* Very light blue background */
+            border-bottom: 5px solid #0077cc;
+        }
+
+        .hero-text {
+            flex: 1; 
+            padding-right: 50px;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5em;
+            color: #0A2342;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+        
+        .hero-text p {
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 30px; /* Space above the CTA button */
+        }
+
+        .hero-image-right {
+            flex: 0 0 40%; 
+            max-width: 450px;
+        }
+
+        .hero-graphic {
+            width: 100%; 
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease-in-out;
+        }
+        .hero-graphic:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Red CTA Button */
+        .cta-button {
+            display: inline-block;
+            background-color: #D63030; /* Accent Red */
+            color: white;
+            padding: 15px 35px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 4px 15px rgba(214, 48, 48, 0.4);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #b82727;
+            box-shadow: 0 6px 20px rgba(214, 48, 48, 0.6);
+        }
+
+        /* --- SECTION BASE STYLES --- */
+        .section {
+            padding: 50px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #0A2342;
+            margin-bottom: 40px;
+        }
+        
+        /* --- 1. TRUST/REVIEWS SECTION --- */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Reviews (2/3) | Image (1/3) */
+            gap: 40px;
+            align-items: center;
+        }
+
+        .review-section h3 {
+            font-size: 1.8em;
+            color: #0077cc;
+            margin-bottom: 20px;
+        }
+        
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .review-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #0077cc; /* Blue accent bar */
+            transition: transform 0.2s;
+        }
+        .review-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .review-card p:first-child {
+            font-style: italic;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .review-card p:last-child {
+            font-weight: bold;
+            color: #0A2342;
+            text-align: right;
+            margin-top: 10px;
+        }
+        
+        .customer-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* --- 2. SERVICES SECTION --- */
+        .service-features-section {
+            background-color: #e9eff4; /* Light blue background */
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .service-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, border 0.3s;
+            border: 1px solid transparent;
+        }
+        .service-box:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-box h3 {
+            font-size: 1.5em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        
+        /* Color coding for services */
+        .service-box:nth-child(1) { /* AC Repair */
+            border-bottom: 5px solid #0077cc;
+        }
+        .service-box:nth-child(2) { /* Furnace Installation */
+            border-bottom: 5px solid #D63030; /* Red for heat */
+        }
+        .service-box:nth-child(3) { /* Air Duct Cleaning */
+            border-bottom: 5px solid #0A2342;
+        }
+
+
+        /* --- 3. COVERAGE AREA STYLES --- */
+        .coverage-area-section {
+            padding: 50px 5%;
+        }
+
+        .coverage-content {
+            display: flex;
+            gap: 40px;
+        }
+
+        .map-container {
+            flex: 1; 
+            max-width: 60%;
+        }
+
+        .county-list-container {
+            flex: 1;
+            max-width: 40%;
+        }
+
+        /* Map Iframe Styling */
+        .nashville-map {
+            width: 100%;
+            height: 400px; 
+            border: 4px solid #0077cc;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Collapsible List (Details/Summary) Styling */
+        details {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: white;
+            transition: box-shadow 0.2s;
+        }
+        
+        details:hover {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        summary {
+            padding: 15px;
+            font-weight: bold;
+            color: #0A2342;
+            cursor: pointer;
+            outline: none;
+            border-radius: 8px;
+        }
+        
+        details[open] summary {
+            background-color: #f0f8ff; 
+            border-bottom: 1px solid #0077cc;
+        }
+
+        .city-list {
+            padding: 10px 15px 15px 30px;
+            list-style: none; 
+        }
+        .city-list li {
+            margin-bottom: 5px;
+            padding: 3px 0;
+            color: #333;
+        }
+        
+        /* --- FOOTER STYLES (MATCHING CONTACT.HTML) --- */
+        .main-footer {
+            background-color: #0A2342; /* Dark Blue */
+            color: white;
+            text-align: center;
+            padding: 25px 5%;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-top: 40px;
+        }
+        .main-footer p {
+            margin: 5px 0;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body { padding-top: 70px; }
+            .main-header { height: 70px; }
+
+            .hero-container {
+                flex-direction: column; 
+                text-align: center;
+                padding: 40px 5%;
+            }
+            .hero-text {
+                padding-right: 0;
+                order: 2; 
+            }
+            .hero-image-right {
+                order: 1; 
+                margin-bottom: 20px;
+                max-width: 100%; 
+            }
+            
+            .trust-grid, .coverage-content {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+            }
+
+            .map-container,
+            .county-list-container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER (Fixed) -->
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo-container">
+            <img src="company_mock_logo.jpg" alt="Company Logo" class="logo" onerror="this.onerror=null; this.src='https://placehold.co/100x45/0A2342/FFFFFF?text=COOLTECH';">
+            <h1>CoolTech HVAC Solutions</h1>
+        </div>
+
+        <!-- NAVIGATION LINKS -->
+        <nav class="main-nav">
+            <!-- Home is active -->
+            <a href="index.html" class="active">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+
+    <!-- 1. HERO SECTION (High Impact) -->
+    <div class="hero-container">
+        <div class="hero-text">
+            <h1>Expert HVAC Repair and Installation in Nashville & Beyond</h1>
+            <p>We provide reliable, 5-star rated service for all your heating and cooling needs. Choose CoolTech for year-round comfort.</p>
+            <a href="contact.html" class="cta-button">Schedule Service Now (Quick Response!)</a>
+        </div>
+        <div class="hero-image-right">
+            <img src="hvac-tech-outdoor-repair.jpg" alt="HVAC Technician working on an outdoor unit" class="hero-graphic" onerror="this.onerror=null; this.src='https://placehold.co/450x300/0A2342/FFFFFF?text=HVAC+Tech';">
+        </div>
+    </div>
+
+    <!-- 2. TRUST AND REVIEWS SECTION (New Layout) -->
+    <section class="section trust-section">
+        <div class="trust-grid">
+            
+            <!-- Left Side: Reviews and Intro -->
+            <div class="review-column">
+                <div class="section about" style="padding: 0;">
+                    <h2>About CoolTech</h2>
+                    <p style="font-size: 1.1em; color: #0A2342; font-style: italic;">
+                        We are a family-owned HVAC business with a simple mission: fast service, honest pricing, and unparalleled quality. With two decades of experience, we put the customer first every time.
+                    </p>
+                </div>
+
+                <div class="review-section" style="padding-left: 0; padding-right: 0;">
+                    <h3>5-Star Customer Feedback</h3>
+                    <div class="review-grid">
+                        <div class="review-card">
+                            <p>"Fast, professional, and affordable! They fixed our AC within an hour."</p>
+                            <p>- Sarah T.</p>
+                        </div>
+
+                        <div class="review-card">
+                            <p>"Honest pricing and friendly service. Highly recommended! Our new furnace is perfect."</p>
+                            <p>- Mark J.</p>
+                        </div>
+
+                        <div class="review-card">
+                            <p>"Best HVAC company we've used. Reliable, knowledgeable, and always on time."</p>
+                            <p>- Emily R.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Image Placeholder -->
+            <div class="image-column">
+                <img src="happycustomer.png" alt="A happy customer giving a thumbs up to an HVAC technician." class="customer-image" onerror="this.onerror=null; this.src='https://placehold.co/400x550/0077cc/FFFFFF?text=Happy+Customer+Image';">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. SERVICES FEATURE SECTION (Full Width Boxes) -->
+    <section class="section service-features-section">
+        <h2>What We Do Best</h2>
+        <div class="services-grid">
+            
+            <div class="service-box">
+                <h3 style="color: #0077cc;">❄️ AC Repair & Maintenance</h3>
+                <p>When the heat is on, we're there. We diagnose and repair all AC makes and models quickly and efficiently to restore your cool air.</p>
+                <a href="services.html#repair" style="color: #0077cc; font-weight: bold; text-decoration: underline;">See AC Services</a>
+            </div>
+
+            <div class="service-box">
+                <h3 style="color: #D63030;">🔥 Heating & Furnace Installation</h3>
+                <p>Stay warm all winter long. We install new, high-efficiency furnaces and heat pumps, providing reliable heat with competitive warranties.</p>
+                <a href="services.html#install" style="color: #D63030; font-weight: bold; text-decoration: underline;">See Installation</a>
+            </div>
+
+            <div class="service-box">
+                <h3 style="color: #0A2342;">🌬️ Indoor Air Quality & Ducts</h3>
+                <p>Breathe easier. Our full duct cleaning and indoor air quality solutions remove allergens and pollutants, improving your home's environment.</p>
+                <a href="services.html#airquality" style="color: #0A2342; font-weight: bold; text-decoration: underline;">See Air Quality</a>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <!-- 4. COVERAGE AREA SECTION (Map and List) -->
+    <section class="coverage-area-section">
+        <h2>Our Service Area</h2>
+        
+        <div class="coverage-content">
+            
+            <!-- LEFT SIDE: Map over Nashville area -->
+            <div class="map-container">
+                <p style="text-align: center; font-style: italic; margin-bottom: 15px; color: #555;">(We proudly serve the Greater Nashville region and surrounding counties)</p>
+                <!-- Embedded Google Map centered near Nashville (approximate coordinates) -->
+                <iframe 
+                    class="nashville-map" 
+                    title="Service Area Map (Nashville, TN Region)"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d159754.76182103507!2d-86.95351633519183!3d36.17066840784407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88646b97b0ce7043%3A0xd64d2621415f9227!2sNashville%2C%20TN!5e0!3m2!1sen!2sus!4v1703649600000!5m2!1sen!2sus" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <!-- RIGHT SIDE: Collapsible County List -->
+            <div class="county-list-container">
+                
+                <details>
+                    <summary>Cheatham County</summary>
+                    <ul class="city-list">
+                        <li>Ashland City</li>
+                        <li>Pleasant View</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Davidson County</summary>
+                    <ul class="city-list">
+                        <li>Nashville</li>
+                        <li>Belle Meade</li>
+                        <li>Antioch</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Dickson County</summary>
+                    <ul class="city-list">
+                        <li>Dickson</li>
+                        <li>White Bluff</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Hickman County</summary>
+                    <ul class="city-list">
+                        <li>Centerville</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Maury County</summary>
+                    <ul class="city-list">
+                        <li>Columbia</li>
+                        <li>Spring Hill</li>
+                    </ul>
+                </details>
+                
+                <details>
+                    <summary>Montgomery County</summary>
+                    <ul class="city-list">
+                        <li>Clarksville</li>
+                    </ul>
+                </details>
+                
+                <details>
+                    <summary>Robertson County</summary>
+                    <ul class="city-list">
+                        <li>Springfield</li>
+                        <li>Greenbrier</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Rutherford County</summary>
+                    <ul class="city-list">
+                        <li>La Vergne</li>
+                        <li>Murfreesboro</li>
+                        <li>Smyrna</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Sumner County</summary>
+                    <ul class="city-list">
+                        <li>Gallatin</li>
+                        <li>Hendersonville</li>
+                    </ul>
+                </details>
+                
+                <details>
+                    <summary>Williamson County</summary>
+                    <ul class="city-list">
+                        <li>Franklin</li>
+                        <li>Brentwood</li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Wilson County</summary>
+                    <ul class="city-list">
+                        <li>Lebanon</li>
+                        <li>Mount Juliet</li>
+                    </ul>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Updated to match other pages) -->
+    <footer class="main-footer">
+        <p>CoolTech HVAC Solutions • Phone: (555) 555-5555 • Email: info@cooltech.com</p>
+        <p>© 2025 CoolTech HVAC Solutions • All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

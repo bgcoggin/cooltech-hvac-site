@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoolTech HVAC Solutions | Our Professional Services</title>
+
+    <!-- INLINE STYLES (Matching index.html) -->
+    <style>
+        /* COLOR PALETTE: 
+            Primary Dark Blue: #0A2342 
+            Accent Bright Blue (Cool): #0077cc 
+            Accent Red (Heat/CTA): #D63030 
+        */
+
+        /* --- GLOBAL BODY ADJUSTMENT FOR FIXED HEADER --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Very light background */
+            color: #333;
+            padding-top: 80px; /* Space for fixed header */
+            margin: 0;
+        }
+        
+        /* Utility for Centering Content */
+        .page-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 10%;
+        }
+
+        /* --- FIXED HEADER STYLES (Copied from index.html) --- */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px; 
+            z-index: 1000; 
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            display: flex;
+            align-items: center; 
+        }
+        
+        .header-container {
+            width: 100%;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 15px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- LOGO AND TITLE ALIGNMENT --- */
+        .logo-container {
+            display: flex;
+            align-items: center; 
+            gap: 12px;
+        }
+
+        .logo-container .logo {
+            height: 45px; 
+            width: auto;
+            border-radius: 8px; /* Rounded logo */
+        }
+
+        .logo-container h1 {
+            font-size: 1.6em; 
+            margin: 0; 
+            color: #0A2342;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation Links */
+        .main-nav a {
+            color: #0A2342;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 12px; 
+            border-radius: 6px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .main-nav a:hover {
+            background-color: #0077cc;
+            color: white;
+        }
+        
+        /* Active Link Styling (Services Page) */
+        .main-nav a.active {
+            color: #0077cc;
+            border-bottom: 3px solid #0077cc;
+            background-color: transparent;
+        }
+
+        /* --- PAGE CONTENT STYLES --- */
+        
+        /* Services Header */
+        .services-header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        .services-header h1 {
+            font-size: 3em;
+            color: #0A2342;
+            margin-bottom: 10px;
+        }
+
+        .services-header p {
+            font-size: 1.2em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Services Grid Layout */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding-bottom: 80px;
+        }
+        
+        /* Service Card Styling */
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid #0077cc; /* Default Accent Red */
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Icon/Emoji Styling */
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .service-card h3 {
+            font-size: 1.8em;
+            color: #0A2342;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* Request Quote Button */
+        .cta-link {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #0077cc; /* Accent Blue */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-link:hover {
+            background-color: #005a99;
+        }
+
+        /* Conditional Border Colors */
+        .service-card:nth-child(even) {
+            border-top-color: #D63030; 
+        }
+        
+        /* --- FOOTER STYLES (Copied from index.html) --- */
+        footer {
+            background-color: #0A2342; /* Dark Blue */
+            color: white;
+            text-align: center;
+            padding: 25px 5%;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-container h1 {
+                font-size: 1.2em; /* Smaller title on mobile */
+            }
+            .main-nav {
+                display: none; /* Hide navigation links on small screens */
+            }
+            .services-header h1 {
+                font-size: 2.5em;
+            }
+            .service-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER (Fixed) - Consistent with index.html -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <!-- Using the same logo logic and placeholder as index.html -->
+                <img src="company_mock_logo.jpg" alt="Company Logo" class="logo" onerror="this.onerror=null; this.src='https://placehold.co/100x45/0A2342/FFFFFF?text=COOLTECH';">
+                <h1>CoolTech HVAC Solutions</h1>
+            </div>
+
+            <!-- NAVIGATION LINKS - Consistent with index.html -->
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <!-- Set 'Services' as active -->
+                <a href="services.html" class="active">Services</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <!-- Services Header Section -->
+        <section class="services-header">
+            <h1>Our Comprehensive HVAC Services</h1>
+            <p>Professional, reliable, and affordable heating & cooling services to keep your home comfortable all year long, backed by our local expertise.</p>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="services-grid">
+
+            <!-- Card 1: AC Repair (Red Border) -->
+            <div class="service-card">
+                <span class="service-icon" role="img" aria-label="Wrench">🛠️</span>
+                <h3>Air Conditioning Repair</h3>
+                <p>Fast, expert repairs to restore cool air and keep your system running efficiently, even during extreme heat waves.</p>
+                <a href="contact.html" class="cta-link">Request Quote</a>
+            </div>
+
+            <!-- Card 2: Furnace Installation (Blue Border) -->
+            <div class="service-card">
+                <span class="service-icon" role="img" aria-label="Fire">🔥</span>
+                <h3>Furnace Installation</h3>
+                <p>Energy-efficient furnace replacements and new installations, properly sized for dependable, cost-effective heat.</p>
+                <a href="contact.html" class="cta-link">Request Quote</a>
+            </div>
+
+            <!-- Card 3: Air Duct Cleaning (Red Border) -->
+            <div class="service-card">
+                <span class="service-icon" role="img" aria-label="Wind">🌬️</span>
+                <h3>Air Duct Cleaning</h3>
+                <p>Improve indoor air quality and efficiency with a complete cleaning of dust, allergens, and debris from your ducts.</p>
+                <a href="contact.html" class="cta-link">Request Quote</a>
+            </div>
+
+            <!-- Card 4: Maintenance Plans (Blue Border) -->
+            <div class="service-card">
+                <span class="service-icon" role="img" aria-label="Calendar">📅</span>
+                <h3>Maintenance Plans</h3>
+                <p>Keep your HVAC system running smoothly year-round with scheduled, pre-season inspections and tune-ups.</p>
+                <a href="contact.html" class="cta-link">Request Quote</a>
+            </div>
+
+            <!-- Card 5: HVAC Replacement (Red Border) -->
+            <div class="service-card">
+                <span class="service-icon" role="img" aria-label="Cycle">🔄</span>
+                <h3>HVAC Replacement</h3>
+                <p>Full-system replacement options backed by proper sizing calculations and expert, insured installation.</p>
+                <a href="contact.html" class="cta-link">Request Quote</a>
+            </div>
+
+            <!-- Card 6: Thermostat Installation (Blue Border) -->
+            <div class="service-card">
+                <span class="service-icon" role="img" aria-label="Thermometer">🌡️</span>
+                <h3>Thermostat Installation</h3>
+                <p>Smart and programmable thermostat setups to maximize control, energy savings, and overall system efficiency.</p>
+                <a href="contact.html" class="cta-link">Request Quote</a>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- FOOTER - Consistent with index.html -->
+    <footer>
+        <p>CoolTech HVAC Solutions • Phone: (555) 555-5555 • Email: info@cooltech.com</p>
+        <p>© 2025 CoolTech HVAC Solutions</p>
+    </footer>
+
+</body>
+</html>

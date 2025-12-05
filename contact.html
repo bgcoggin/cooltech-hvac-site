@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoolTech HVAC Solutions - Contact & Booking</title>
+
+    <!-- CONSOLIDATED INLINE STYLES (Matching fixed layout, colors, and header/footer) -->
+    <style>
+        /* COLOR PALETTE: 
+            Primary Dark Blue: #0A2342 
+            Accent Bright Blue (Cool): #0077cc 
+            Accent Red (Heat/CTA): #D63030 
+        */
+        
+        /* --- GLOBAL BODY ADJUSTMENT FOR FIXED HEADER --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Very light background */
+            color: #333;
+            padding-top: 80px; /* Space for fixed header */
+            margin: 0;
+        }
+
+        /* --- FIXED HEADER STYLES --- */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px; 
+            z-index: 1000; 
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            display: flex;
+            align-items: center; 
+        }
+        
+        .header-container {
+            width: 100%;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 15px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- LOGO AND TITLE ALIGNMENT --- */
+        .logo-container {
+            display: flex;
+            align-items: center; 
+            gap: 12px;
+        }
+
+        .logo-container .logo {
+            height: 45px; 
+            width: auto;
+            border-radius: 8px; 
+        }
+
+        .logo-container h1 {
+            font-size: 1.6em; 
+            margin: 0; 
+            color: #0A2342;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation Links */
+        .main-nav a {
+            color: #0A2342;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 12px; 
+            border-radius: 6px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .main-nav a:hover {
+            background-color: #0077cc;
+            color: white;
+        }
+        
+        /* Active Link Styling */
+        .main-nav a.active {
+            color: #0077cc;
+            border-bottom: 3px solid #0077cc;
+            background-color: transparent;
+        }
+
+        /* --- CONTACT SECTION STYLING --- */
+        .contact-page-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-page-container h1 {
+            text-align: center;
+            color: #0A2342;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .contact-page-container p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        /* Form Styling */
+        .booking-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            grid-column: span 1; 
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1; 
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #0A2342;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #0077cc;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Submit Button */
+        .submit-button-container {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .submit-button {
+            /* Use red accent for CTA */
+            background-color: #D63030; 
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s;
+        }
+
+        .submit-button:hover {
+            background-color: #0A2342; /* Dark blue on hover */
+        }
+        .submit-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .booking-form {
+                grid-template-columns: 1fr; 
+            }
+            .form-group {
+                grid-column: 1 / -1; 
+            }
+            .main-nav {
+                display: none; /* Hide desktop navigation on mobile */
+            }
+        }
+
+        /* --- SUCCESS MESSAGE BOX STYLES (Creative) --- */
+        .success-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 30px;
+            background: linear-gradient(135deg, #0077cc, #0A2342); /* Blue Gradient */
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            z-index: 2000; /* Higher than header */
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease-in-out, visibility 0.4s;
+            max-width: 90%;
+            width: 350px;
+        }
+
+        .success-message.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .success-message h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+        }
+        
+        .success-message .icon {
+            font-size: 4em;
+            display: block;
+            margin-bottom: 15px;
+            animation: pulse 1s infinite alternate; 
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        /* --- FOOTER STYLES --- */
+        .main-footer {
+            background-color: #0A2342; /* Dark Blue */
+            color: white;
+            text-align: center;
+            padding: 25px 5%;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-top: 40px; /* Add margin above footer */
+        }
+        .main-footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER (Fixed) - Consistent with other pages -->
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo-container">
+            <img src="company_mock_logo.jpg" alt="Company Logo" class="logo" onerror="this.onerror=null; this.src='https://placehold.co/100x45/0A2342/FFFFFF?text=COOLTECH';">
+            <h1>CoolTech HVAC Solutions</h1>
+        </div>
+
+        <!-- NAVIGATION LINKS -->
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <!-- Set 'Contact' as active -->
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </div>
+</header>
+
+
+    <!-- CONTACT FORM SECTION -->
+    <div class="contact-page-container">
+        <h1>Book Your HVAC Service</h1>
+        <p>Fill out the form below and one of our certified technicians will contact you within 24 hours to confirm your appointment and provide an estimate. For immediate emergencies, please call us at (555) 555-5555.</p>
+
+        <form class="booking-form" id="booking-form">
+            
+            <!-- Personal Info Row -->
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <!-- Contact Info Row -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Service Address (Street, City)</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            
+            <!-- Service Selection Row (Drop-down) -->
+            <div class="form-group">
+                <label for="service_type">Select Service Type (Required)</label>
+                <select id="service_type" name="service_type" required>
+                    <option value="" disabled selected>-- Choose a Service --</option>
+                    <option value="AC_REPAIR">Air Conditioning Repair</option>
+                    <option value="FURNACE_INSTALL">Furnace Installation</option>
+                    <option value="AIR_DUCT">Air Duct Cleaning</option>
+                    <option value="MAINTENANCE_PLANS">Maintenance Plans</option>
+                    <option value="REPLACEMENT">HVAC Replacement</option>
+                    <option value="THERMOSTAT_INSTALL">Thermostat Installation</option>
+                    <option value="OTHER">Other Inquiry</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="preferred_date">Preferred Service Date</label>
+                <input type="date" id="preferred_date" name="preferred_date">
+            </div>
+
+            <!-- Message Area -->
+            <div class="form-group full-width">
+                <label for="message">Detailed Description of Issue</label>
+                <textarea id="message" name="message" placeholder="e.g., My AC is blowing warm air, or I need an estimate for a new system."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-button-container">
+                <button type="submit" class="submit-button">Submit Booking Request</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- NEW SUCCESS MESSAGE BOX (Hidden by default) -->
+    <div id="success-message" class="success-message">
+        <span class="icon">🚀</span>
+        <h2>Request Sent!</h2>
+        <p>Your CoolTech service request has zoomed off and is heading to our team! We'll reach out within 24 hours to schedule your visit. Thanks for choosing comfort!</p>
+    </div>
+
+
+    <!-- FOOTER - Consistent with other pages -->
+    <footer class="main-footer">
+        <p>CoolTech HVAC Solutions • Phone: (555) 555-5555 • Email: info@cooltech.com</p>
+        <p>© 2025 CoolTech HVAC Solutions • All Rights Reserved</p>
+    </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('booking-form');
+        const messageBox = document.getElementById('success-message');
+
+        form.addEventListener('submit', function(event) {
+            // 1. Prevent the default form submission (stops page reload)
+            event.preventDefault();
+
+            // Simple validation check 
+            if (!form.checkValidity()) {
+                return;
+            }
+
+            // Simulate the submission process delay
+            const submitButton = form.querySelector('.submit-button');
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+
+            setTimeout(() => {
+                // 2. Simulate success: Show the creative message box
+                messageBox.classList.add('show');
+                
+                // 3. Reset the form
+                form.reset();
+
+                // 4. Restore button state
+                submitButton.textContent = 'Submit Booking Request';
+                submitButton.disabled = false;
+
+                // 5. Hide the message box after 5 seconds
+                setTimeout(() => {
+                    messageBox.classList.remove('show');
+                }, 5000); 
+
+            }, 800); // 800ms delay to simulate network latency
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoolTech HVAC Blog</title>
+    
+    <!-- CONSOLIDATED INLINE STYLES (Matching fixed layout, colors, and header/footer) -->
+    <style>
+        /* COLOR PALETTE: 
+            Primary Dark Blue: #0A2342 
+            Accent Bright Blue (Cool): #0077cc 
+            Accent Red (Heat/CTA): #D63030 
+        */
+
+        /* --- GLOBAL BODY ADJUSTMENT FOR FIXED HEADER --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Very light background */
+            color: #333;
+            padding-top: 80px; /* Space for fixed header */
+            margin: 0;
+        }
+
+        /* --- FIXED HEADER STYLES --- */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px; 
+            z-index: 1000; 
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            display: flex;
+            align-items: center; 
+        }
+        
+        .header-container {
+            width: 100%;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 15px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- LOGO AND TITLE ALIGNMENT --- */
+        .logo-container {
+            display: flex;
+            align-items: center; 
+            gap: 12px;
+        }
+
+        .logo-container .logo {
+            height: 45px; 
+            width: auto;
+            border-radius: 8px; 
+        }
+
+        .logo-container h1 {
+            font-size: 1.6em; 
+            margin: 0; 
+            color: #0A2342;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation Links */
+        .main-nav a {
+            color: #0A2342;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 12px; 
+            border-radius: 6px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .main-nav a:hover {
+            background-color: #0077cc;
+            color: white;
+        }
+        
+        /* Active Link Styling */
+        .main-nav a.active {
+            color: #0077cc;
+            border-bottom: 3px solid #0077cc;
+            background-color: transparent;
+        }
+
+        /* --- PAGE CONTENT / BLOG STYLES --- */
+        .blog-container {
+            width: 90%;
+            max-width: 900px; 
+            margin: 40px auto;
+        }
+
+        .blog-title {
+            text-align: center;
+            color: #0A2342; /* Primary Dark Blue for main title */
+            font-size: 2.5em;
+            margin-bottom: 30px; 
+            padding-bottom: 10px;
+            border-bottom: 2px solid #0077cc; /* Accent line */
+        }
+        
+        .blog-post {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Consistent shadow */
+        }
+        .blog-post h2 {
+            color: #0077cc; /* Accent Bright Blue for post titles */
+            margin-top: 0;
+            font-size: 2em;
+        }
+        .post-meta {
+            color: #D63030; /* Red Accent for metadata */
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+        .post-image {
+            width: 100%;
+            height: 500px; /* Adjusted height slightly for better responsiveness */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        
+        /* --- FOOTER STYLES --- */
+        .main-footer {
+            background-color: #0A2342; /* Dark Blue */
+            color: white;
+            text-align: center;
+            padding: 25px 5%;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .main-footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive adjustments */
+        @media(max-width: 768px) {
+            .page-content {
+                padding: 20px;
+            }
+            .main-nav {
+                display: none; /* Hide desktop navigation on mobile */
+            }
+            .post-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER (Fixed) -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="company_mock_logo.jpg" alt="Company Logo" class="logo" onerror="this.onerror=null; this.src='https://placehold.co/100x45/0A2342/FFFFFF?text=COOLTECH';">
+                <h1>CoolTech HVAC Solutions</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <!-- Set 'Blog' as active -->
+                <a href="blog.html" class="active">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="blog-container">
+        <h1 class="blog-title">Expert HVAC Tips & News</h1>
+
+        <div class="blog-post">
+            <h2>3 Essential Ways to Prepare Your AC for Summer</h2>
+            <div class="post-meta">Published on May 15, 2025 by John D.</div>
+            <!-- Added onerror fallback for consistency and reliability -->
+            <img src="placeholder_ac_summer.webp" alt="AC unit outside in summer" class="post-image" onerror="this.onerror=null; this.src='https://placehold.co/900x350/0077cc/FFFFFF?text=SUMMER+AC+CHECKLIST';">
+            <p>The summer heat is around the corner, and the last thing you want is your AC unit failing on the hottest day. Regular maintenance is key to avoiding costly repairs and ensuring peak efficiency. Here are the three most important steps you should take now:</p>
+            <ol>
+                <li>Clean or Replace Your Air Filter: A dirty filter restricts airflow, forcing your system to work harder and wasting energy.</li>
+                <li>Clear Debris Around the Outdoor Unit: Leaves, grass clippings, and dirt can block the condenser coils, reducing the system's ability to cool.</li>
+                <li>Schedule a Professional Tune-Up: Our technicians can inspect refrigerant levels, clean coils, and check electrical components for optimal performance.</li>
+            </ol>
+        </div>
+
+        <div class="blog-post">
+            <h2>Furnace Safety 101: Tips for a Warm and Safe Winter</h2>
+            <div class="post-meta">Published on October 22, 2024 by Jane S.</div>
+            <!-- Added onerror fallback for consistency and reliability -->
+            <img src="placeholder_furnace_winter.jpg" alt="Furnace in a basement" class="post-image" onerror="this.onerror=null; this.src='https://placehold.co/900x350/D63030/FFFFFF?text=WINTER+FURNACE+SAFETY';">
+            <p>As temperatures drop, the furnace becomes your home's most important appliance. Safety should always be your top priority. Ensure your home is protected this winter by following these simple, yet critical, guidelines:</p>
+            <ul>
+                <li>Check Carbon Monoxide Detectors: Ensure they are working properly and located near sleeping areas.</li>
+                <li>Keep the Area Clear: Never store flammable materials near your furnace, water heater, or any heating appliance.</li>
+                <li>Inspect Vents and Flues: Ensure exhaust vents are clear of snow, ice, or bird nests to prevent exhaust buildup.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <p>CoolTech HVAC Solutions • Phone: (555) 555-5555 • Email: info@cooltech.com</p>
+        <p>© 2025 CoolTech HVAC Solutions • All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
