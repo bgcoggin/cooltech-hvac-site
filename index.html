@@ -8,24 +8,20 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- INLINE STYLES WITH NEW BLUE/RED COLOR SCHEME AND REVAMPED LAYOUT -->
+    <!-- INLINE STYLES -->
     <style>
-        /* COLOR PALETTE: 
-            Primary Dark Blue: #0A2342 
-            Accent Bright Blue (Cool): #0077cc 
-            Accent Red (Heat/CTA): #D63030 
-        */
+       
 
-        /* --- GLOBAL BODY ADJUSTMENT FOR FIXED HEADER --- */
+        /* --- GLOBAL BODY ADJUSTMENT --- */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8; /* Very light background */
+            background-color: #f8f8f8; 
             color: #333;
             padding-top: 80px; 
-            margin: 0; /* Ensure no body margin */
+            margin: 0; 
         }
 
-        /* --- FIXED HEADER STYLES --- */
+        
         .main-header {
             position: fixed;
             top: 0;
@@ -85,22 +81,22 @@
             color: white;
         }
         
-        /* Active Link Styling */
+        
         .main-nav a.active {
             color: #0077cc;
             border-bottom: 3px solid #0077cc;
             background-color: transparent;
         }
-        /* --- END HEADER STYLES --- */
+        
 
 
-        /* --- HERO SECTION STYLES (Fixed CTA placement) --- */
+        /* --- HERO SECTION STYLES --- */
         .hero-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 80px 5%;
-            background-color: #f0f7ff; /* Very light blue background */
+            background-color: #f0f7ff; 
             border-bottom: 5px solid #0077cc;
         }
 
@@ -119,7 +115,7 @@
         .hero-text p {
             font-size: 1.3em;
             color: #555;
-            margin-bottom: 30px; /* Space above the CTA button */
+            margin-bottom: 30px; 
         }
 
         .hero-image-right {
@@ -141,7 +137,7 @@
         /* Red CTA Button */
         .cta-button {
             display: inline-block;
-            background-color: #D63030; /* Accent Red */
+            background-color: #D63030; 
             color: white;
             padding: 15px 35px;
             border-radius: 10px;
@@ -172,7 +168,7 @@
         /* --- 1. TRUST/REVIEWS SECTION --- */
         .trust-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr; /* Reviews (2/3) | Image (1/3) */
+            grid-template-columns: 2fr 1fr; 
             gap: 40px;
             align-items: center;
         }
@@ -194,7 +190,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-            border-left: 5px solid #0077cc; /* Blue accent bar */
+            border-left: 5px solid #0077cc; 
             transition: transform 0.2s;
         }
         .review-card:hover {
@@ -225,7 +221,7 @@
 
         /* --- 2. SERVICES SECTION --- */
         .service-features-section {
-            background-color: #e9eff4; /* Light blue background */
+            background-color: #e9eff4; 
         }
 
         .services-grid {
@@ -255,13 +251,13 @@
         }
         
         /* Color coding for services */
-        .service-box:nth-child(1) { /* AC Repair */
+        .service-box:nth-child(1) { 
             border-bottom: 5px solid #0077cc;
         }
-        .service-box:nth-child(2) { /* Furnace Installation */
-            border-bottom: 5px solid #D63030; /* Red for heat */
+        .service-box:nth-child(2) { 
+            border-bottom: 5px solid #D63030; 
         }
-        .service-box:nth-child(3) { /* Air Duct Cleaning */
+        .service-box:nth-child(3) { 
             border-bottom: 5px solid #0A2342;
         }
 
@@ -286,7 +282,7 @@
             max-width: 40%;
         }
 
-        /* Map Iframe Styling */
+        /* Map */
         .nashville-map {
             width: 100%;
             height: 400px; 
@@ -295,7 +291,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
-        /* Collapsible List (Details/Summary) Styling */
+        /* Collapsible List Styling */
         details {
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -334,7 +330,7 @@
         
         /* --- FOOTER STYLES (MATCHING CONTACT.HTML) --- */
         .main-footer {
-            background-color: #0A2342; /* Dark Blue */
+            background-color: #0A2342; 
             color: white;
             text-align: center;
             padding: 25px 5%;
@@ -347,7 +343,7 @@
         }
 
 
-        /* Responsive Design */
+        
         @media (max-width: 768px) {
             body { padding-top: 70px; }
             .main-header { height: 70px; }
@@ -381,7 +377,7 @@
 </head>
 <body>
 
-    <!-- HEADER (Fixed) -->
+    <!-- HEADER -->
 <header class="main-header">
     <div class="header-container">
         <div class="logo-container">
@@ -402,7 +398,7 @@
 </header>
 
 
-    <!-- 1. HERO SECTION (High Impact) -->
+    <!-- 1. HERO SECTION -->
     <div class="hero-container">
         <div class="hero-text">
             <h1>Expert HVAC Repair and Installation in Nashville & Beyond</h1>
@@ -414,7 +410,7 @@
         </div>
     </div>
 
-    <!-- 2. TRUST AND REVIEWS SECTION (New Layout) -->
+    <!-- 2. TRUST AND REVIEWS SECTION -->
     <section class="section trust-section">
         <div class="trust-grid">
             
@@ -448,7 +444,7 @@
                 </div>
             </div>
 
-            <!-- Right Side: Image Placeholder -->
+            <!-- Right Side: Image -->
             <div class="image-column">
                 <img src="happycustomer.png" alt="A happy customer giving a thumbs up to an HVAC technician." class="customer-image" onerror="this.onerror=null; this.src='https://placehold.co/400x550/0077cc/FFFFFF?text=Happy+Customer+Image';">
             </div>
@@ -456,7 +452,7 @@
         </div>
     </section>
 
-    <!-- 3. SERVICES FEATURE SECTION (Full Width Boxes) -->
+    <!-- 3. SERVICES FEATURE SECTION -->
     <section class="section service-features-section">
         <h2>What We Do Best</h2>
         <div class="services-grid">
@@ -492,7 +488,7 @@
             <!-- LEFT SIDE: Map over Nashville area -->
             <div class="map-container">
                 <p style="text-align: center; font-style: italic; margin-bottom: 15px; color: #555;">(We proudly serve the Greater Nashville region and surrounding counties)</p>
-                <!-- Embedded Google Map centered near Nashville (approximate coordinates) -->
+                <!-- Google Map centered near Nashville -->
                 <iframe 
                     class="nashville-map" 
                     title="Service Area Map (Nashville, TN Region)"
@@ -597,7 +593,7 @@
         </div>
     </section>
 
-    <!-- FOOTER (Updated to match other pages) -->
+    <!-- FOOTER -->
     <footer class="main-footer">
         <p>CoolTech HVAC Solutions • Phone: (555) 555-5555 • Email: info@cooltech.com</p>
         <p>© 2025 CoolTech HVAC Solutions • All Rights Reserved</p>
