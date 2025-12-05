@@ -5,24 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About CoolTech HVAC Solutions</title>
 
-    <!-- INLINE STYLES (Matching index.html and services.html) -->
+    <!-- INLINE STYLES -->
     <style>
-        /* COLOR PALETTE: 
-            Primary Dark Blue: #0A2342 
-            Accent Bright Blue (Cool): #0077cc 
-            Accent Red (Heat/CTA): #D63030 
-        */
 
-        /* --- GLOBAL BODY ADJUSTMENT FOR FIXED HEADER --- */
+
+        /* --- GLOBAL BODY --- */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8; /* Very light background */
+            background-color: #f8f8f8; 
             color: #333;
-            padding-top: 80px; /* Space for fixed header */
+            padding-top: 80px; 
             margin: 0;
         }
 
-        /* --- FIXED HEADER STYLES (Consistent with other pages) --- */
+        /* --- FIXED HEADER STYLES --- */
         .main-header {
             position: fixed;
             top: 0;
@@ -89,7 +85,7 @@
             background-color: transparent;
         }
 
-        /* --- PAGE CONTENT STYLES (Integrated and Color-Corrected) --- */
+        /* --- PAGE CONTENT STYLES --- */
         .page-content {
             width: 90%;
             max-width: 1000px;
@@ -100,14 +96,14 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .page-content h1 {
-            color: #0A2342; /* Primary Dark Blue */
+            color: #0A2342; 
             text-align: center;
             margin-bottom: 5px;
             font-size: 2.5em;
         }
         .page-content .subtitle {
             text-align: center;
-            color: #0077cc; /* Accent Bright Blue */
+            color: #0077cc;
             font-size: 1.1em;
             margin-bottom: 40px;
             padding-bottom: 10px;
@@ -124,7 +120,6 @@
         .mission-vision div {
             flex: 1;
             padding: 25px;
-            /* Using Accent Red for the mission/vision borders */
             border-left: 4px solid #D63030; 
             background: #fffcfc;
             border-radius: 6px;
@@ -157,7 +152,6 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 10px;
-            /* Consistent Blue Border */
             border: 5px solid #0077cc; 
             transition: transform 0.3s;
         }
@@ -170,7 +164,7 @@
             font-size: 1.3em;
         }
         .team-member p {
-            color: #D63030; /* Red Accent for Role */
+            color: #D63030; 
             font-weight: bold;
             font-size: 0.9em;
         }
@@ -185,9 +179,9 @@
             margin-bottom: 20px;
         }
 
-        /* --- FOOTER STYLES (Consistent with other pages) --- */
+        /* --- FOOTER STYLES --- */
         .main-footer {
-            background-color: #0A2342; /* Dark Blue */
+            background-color: #0A2342; 
             color: white;
             text-align: center;
             padding: 25px 5%;
@@ -198,7 +192,7 @@
             margin: 5px 0;
         }
 
-        /* Responsive adjustments */
+        
         @media(max-width: 768px) {
             .mission-vision {
                 flex-direction: column;
@@ -208,14 +202,14 @@
                 padding: 20px;
             }
             .main-nav {
-                display: none; /* Hide desktop navigation on mobile */
+                display: none; 
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER (Fixed) - Consistent with other pages -->
+    <!-- HEADER -->
     <header class="main-header">
         <div class="header-container">
             <div class="logo-container">
@@ -225,7 +219,6 @@
             <nav class="main-nav">
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
-                <!-- Set 'About' as active -->
                 <a href="about.html" class="active">About</a>
                 <a href="blog.html">Blog</a>
                 <a href="contact.html">Contact</a>
@@ -251,19 +244,16 @@
         <h2>Meet Our Founding Team</h2>
         <div class="team-grid">
             <div class="team-member">
-                <!-- Added onerror fallback for image consistency -->
                 <img src="ceo.avif" alt="CEO Photo" onerror="this.onerror=null; this.src='https://placehold.co/160x160/0077cc/FFFFFF?text=LANE';">
                 <h3>Lane Kiffin</h3>
                 <p>Founder & CEO</p>
             </div>
             <div class="team-member">
-                <!-- Added onerror fallback for image consistency -->
                 <img src="opsmanager.jpg" alt="Lead Technician Photo" onerror="this.onerror=null; this.src='https://placehold.co/160x160/0077cc/FFFFFF?text=DAVID';">
                 <h3>David Lee</h3>
                 <p>Lead Service Technician</p>
             </div>
             <div class="team-member">
-                <!-- Added onerror fallback for image consistency -->
                 <img src="leadtech.webp" alt="Operations Manager Photo" onerror="this.onerror=null; this.src='https://placehold.co/160x160/0077cc/FFFFFF?text=SAMMY';">
                 <h3>Sammy Alderman</h3>
                 <p>Operations Manager</p>
@@ -277,7 +267,7 @@
         </div>
     </div>
 
-    <!-- FOOTER - Consistent with other pages -->
+    <!-- FOOTER -->
     <footer class="main-footer">
         <p>CoolTech HVAC Solutions • Phone: (555) 555-5555 • Email: info@cooltech.com</p>
         <p>© 2025 CoolTech HVAC Solutions • All Rights Reserved</p>
